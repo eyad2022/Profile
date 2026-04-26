@@ -270,7 +270,7 @@ a:hover {
 /* ========================================= */
 /* التجاوب مع الهواتف والشاشات حتى 800px     */
 /* ========================================= */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
     /* تعديل شريط التنقل */
     nav {
         justify-content: space-between;
