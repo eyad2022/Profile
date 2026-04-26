@@ -3,7 +3,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+} 
+html {
+    scroll-behavior: smooth; /* هذا السطر يجعل الحركة ناعمة عند الضغط على أي رابط */
 }
+
 
 body {
     
@@ -22,14 +26,16 @@ body {
 /* ========================================= */
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 15vh;
-    padding: 0 2rem;
+    padding: 0 5%; 
+    /*margin-left: -800px;
+    margin-right:-800px;*/
 }
 
 .logo {
-    font-size: 2.5rem;
+    font-size: 8rem;
     font-weight: 500;
 }
 
@@ -51,7 +57,7 @@ nav {
 a {
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 50px;
 }
 
 a:hover {
@@ -67,16 +73,18 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
-   /* min-height: vh ; */
-   margin-top: 150px;
-   margin-bottom: 250px;
+    gap: 20rem; /* زيادة المسافة بين الصورة والنص */
+   /* min-height: 85vh; /* ليأخذ أغلب ارتفاع الشاشة تحت الناف بار */
+    width: 100%; /* العرض الكامل */
+    max-width: 1600px; /* سقف للعرض لضمان التناسق في الشاشات العملاقة */
+    margin: 0 auto;
+    padding: 4rem 2rem;
 }
 
 .section__pic-container {
     display: flex;
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     margin: auto 0;
 }
 
@@ -85,8 +93,8 @@ a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2); 
-    border: 5px solid white;
+    border: 8px solid rgba(255, 255, 255, 0.1); /* إطار شفاف لإبراز الصورة */
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* ظل عميق للوضوح */
 }
 
 .section__text {
@@ -104,16 +112,17 @@ a:hover {
 }
 
 .title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* لزيادة وضوح النص على الخلفية */
 }
 
 .section__text__p2 {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 3rem;
+    font-weight: 800;
     color: #96E57B;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
 }
 
 /* الأزرار (Buttons) */
@@ -194,31 +203,42 @@ a:hover {
 /* ========================================= */
 .about-section {
     display: flex;
-    gap: 40px;
+    gap: 180px;
     align-items: center;
-    max-width: 950px;
-    margin: 6rem auto;
+    max-width: 1800px;
+    margin: 2rem auto;
     padding: 0 2rem;
+}
+#about-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 180px;
+  scroll-margin-top: 80px;
+}
+
+#about-head h2 {
+  font-size: 3rem;
 }
 
 .about-image img {
-    max-width: 250px;
+    max-width: 500px;
     width: 100%;
-    height: auto; 
-    border-radius: 2rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    height: 500px; 
+    border-radius: 3rem;
+    box-shadow: 0 0 50px rgba(153, 60, 60, 1); /* ظل عميق للوضوح */
 }
 
 .about-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
 }
 
 .cards-container {
     display: flex;
-    gap: 20px;
+    gap: 50px;
 }
 
 .info-card {
@@ -244,151 +264,188 @@ a:hover {
 }
 
 .info-card h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 3rem;
+    font-weight: 800;
     margin-bottom: 5px;
 }
 
 .info-card p {
-    font-size: 0.9rem;
+    font-size: 1.8rem;
     color: #1778D9;
 }
 
 .bio-text {
-    font-size: 1.2rem; /* تكبير الخط بنسبة بسيطة جداً ليكون أوضح */
+    font-size: 1.6rem; /* تكبير الخط بنسبة بسيطة جداً ليكون أوضح */
     font-weight: bold; /* هذه الخاصية تجعل الخط سميكاً (Bold) */
     color: #000000; /* جعلنا اللون أقرب للأسود ليكون واضحاً جداً على الخلفية البيضاء */
-    line-height: 1.8;
     text-align: left;
     
 }
 
 
-/* ========================================= */
-/* 4. التجاوب مع الهواتف والأجهزة اللوحية    */
-/* ========================================= */
-/* ========================================= */
-/* التجاوب مع الهواتف والشاشات حتى 800px     */
-/* ========================================= */
-@media screen and (max-width: 650px) {
-    /* تعديل شريط التنقل */
+
+/* ======================================================== */
+/* أكواد التجاوب الشاملة للهواتف - (يجب أن تكون في أسفل الملف) */
+/* ======================================================== */
+
+@media screen and (max-width: 992px) {
+    /* 1. إصلاح شريط التنقل (الناف بار) */
     nav {
-        justify-content: space-between;
         padding: 0 1.5rem;
     }
-
-    .menu-icon {
-        display: block; 
-        z-index: 100;
-        color: #e06666; /* لون الأيقونة الأحمر المائل للوردي كما في الصورة */
-        font-size: 2rem; /* تكبير الأيقونة قليلاً لتكون واضحة */
+    
+        /* إصلاح حجم اللوجو العملاق في الهواتف */
+    .logo {
+        font-size: 1.5rem; /* تصغير حجم الخط ليتناسب مع الهاتف */
+        white-space: nowrap; /* إجبار الكلمة على البقاء في سطر واحد وعدم الانقسام */
+        max-width: 75%; /* منعه من التمدد ودفع أيقونة القائمة */
     }
 
     .nav-links {
+        display: none; /* إخفاء الروابط العادية */
+    }
+    .menu-icon {
+        display: block; /* إظهار أيقونة القائمة */
+        font-size: 2.2rem;
+        color: #e06666;
+        z-index: 101;
+        cursor: pointer;
+    }
+    /* تنسيق القائمة المنسدلة */
+    .nav-links {
         position: fixed;
+        display: flex;
         top: 0;
-        right: -100%; 
+        right: -100%;
         height: 100vh;
-        width: 180px;
-        background: rgba(51, 34, 34, 0.95); /* جعلت الخلفية أغمق قليلاً لتكون أوضح */
+        width: 250px;
+        background: rgba(167, 152, 152, 0.95);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 80px;
         transition: 0.4s ease-in-out;
         z-index: 100;
-        box-shadow: -5px 0 15px rgba(240, 239, 239, 0.72);
     }
-
     .nav-links.active {
-        right: 0; 
+        right: 0; /* تظهر عند الضغط */
+    }
+        /* تصغير حجم خط الروابط في القائمة الجانبية للهاتف */
+    .nav-links li a {
+        font-size: 1.3rem; /* حجم ممتاز ومقروء للهاتف */
+        font-weight: 500;
     }
 
+    /* لضمان مسافة مناسبة بين كل رابط والذي تحته */
     .nav-links li {
-        margin: 1rem 0;
+        margin: 1.5rem 0; 
     }
 
-    /* تعديل قسم الملف الشخصي */
+
+    /* 2. إصلاح القسم الأول (الملف الشخصي) */
     #profile {
-        flex-direction: column;
-        gap: 2rem;
-        padding: 4rem 1rem;
+        flex-direction: column; /* الصورة فوق والنص تحت */
         text-align: center;
+        gap: 2rem;
+        padding: 6rem 1rem 2rem; /* مسافة علوية لتجنب التداخل مع الناف بار */
+        min-height: auto;
     }
-
     .section__pic-container {
-        width: 250px; /* تصغير الصورة قليلاً لتناسب الشاشة كما في صورتك */
+        width: 250px; /* تكبير الصورة لتناسب الهاتف */
         height: 250px;
         margin: 0 auto;
     }
-
     .title {
-        font-size: 2.2rem;
+        font-size: 2.8rem; /* تصغير الخط لكي لا يخرج عن الشاشة */
     }
-
     .section__text__p2 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
-
-    /* ترتيب الأزرار فوق بعضها لجميع الهواتف */
     .btn-container {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: column; /* الأزرار فوق بعضها */
         width: 100%;
         align-items: center;
+        gap: 1rem;
+    }
+    .gradient-button {
+        width: 80%;
     }
 
-    .gradient-button {
-        width: 75%; /* عرض الأزرار كما يظهر في الصورة */
+    /* 3. إصلاح قسم من أنا (About) */
+    .about-section {
+        flex-direction: column; /* الصورة فوق والبطاقات تحت */
+        text-align: center;
+        margin: 3rem 1rem;
+        margin-top : 150px;
+        padding: 2rem 1rem;
+        gap: 15px;
+    }
+    .about-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 35px;
+        margin-top: -140px; 
+    }
+    .about-image img {
+        max-width: 260px; /* حجم الصورة في الهاتف */
+        max-height: 240px;
+        
+    }
+    
+    /* جعل البطاقات بجانب بعضها كما طلبت مسبقاً */
+    .cards-container {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        gap: 10px;
+    }
+    .info-card {
+        width: 48%;
+        height: 120px; /* تثبيت الارتفاع لتبدو مرتبة */
+       padding: 10px 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .info-card i {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+    .info-card h3 {
+        font-size: 0.85rem;
+        margin-bottom: 2px;
+    }
+    .info-card p {
+        font-size: 0.7rem;
+        line-height: 1.2;
+    }
+    .bio-text {
+        text-align: center;
+        font-size: 0.95rem;
+        margin-top: -30px;
     }
 }
 
-
-    /* التجاوب الخاص بقسم About */
-   .about-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-image img {
-        max-width: 250px;
-    }
-
-    .cards-container {
-        display: flex;
-        flex-direction: row; /* لجعل البطاقات فوق بعضها كما في الصورة */
-        align-items: stretch; /* السر هنا: هذا السطر يجبر البطاقات على التمركز في المنتصف */
-        justify-content: center;
-        width: 100%;
-        gap: 15px; /*المسافة بين البطاقتين*/
-    }
-
-    .info-card {
-        width: 80%; /* تحديد عرض البطاقة لكي لا تمتد لآخر الشاشة */
-        max-width: 280px; /* أقصى عرض للبطاقة للحفاظ على شكلها الأنيق */
-        padding: 10px;
-    }
-
-    
-
-      .bio-text {
-        text-align: center;
-        font-size: 1rem; /* حجم مناسب ومقروء بوضوح على الهاتف */
-        font-weight: 600; /* الحفاظ على سمك الخط في الهاتف أيضاً */
-    }
-
-
-
-/* ========================================= */
-/* التجاوب مع الشاشات الصغيرة جداً           */
-/* ========================================= */
-@media screen and (max-width: 480px) {
+/* ======================================================== */
+/* دعم إضافي للشاشات الصغيرة جداً (مثل iPhone SE القديم)    */
+/* ======================================================== */
+@media screen and (max-width: 400px) {
     .section__pic-container {
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
     }
-    
+    .title {
+        font-size: 2.2rem;
+    }
+    .info-card h3 {
+        font-size: 0.75rem; /* تصغير الكلمات لكي لا تنكسر */
+    }
+    .info-card p {
+        font-size: 0.65rem;
+    }
     .gradient-button {
-        width: 85%; /* زيادة عرض الزر قليلاً في الشاشات الصغيرة جداً */
+        width: 95%;
+        font-size: 16px;
     }
 }
