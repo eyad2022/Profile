@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    
+    background-image: url('IMG-20260422-WA0005.jpg'); 
+    background-size: 100% 100%; /* تمديد الصورة لتملأ العرض والطول بالكامل */
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+
+/* ========================================= */
+/* 2. شريط التنقل - الشاشات الكبيرة (Desktop)*/
+/* ========================================= */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+/* الأيقونة مخفية في الكمبيوتر */
+.menu-icon {
+    display: none; 
+    font-size: 2rem;
+    cursor: pointer;
+    color: rgba(196, 94, 94, 0.84);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.1rem;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+a:hover {
+    color: #4ecdc4; 
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+}
+
+/* ========================================= */
+/* 3. قسم الملف الشخصي (Profile Section)     */
+/* ========================================= */
+#profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+   /* min-height: vh ; */
+   margin-top: 150px;
+   margin-bottom: 250px;
+}
+
+.section__pic-container {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2); 
+    border: 5px solid white;
+}
+
+.section__text {
+    align-self: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.section__text__p1 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #23FF00; 
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.section__text__p2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #96E57B;
+    margin-bottom: 1.5rem;
+}
+
+/* الأزرار (Buttons) */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.gradient-button {
+  position: relative;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.gradient-button:hover {
+  transform: scale(1.03);
+}
+
+.gradient-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #ff6b6b);
+  z-index: -2;
+  filter: blur(10px);
+  transform: rotate(0deg);
+  transition: transform 1.5s ease-in-out;
+}
+
+.gradient-button:hover::before {
+  transform: rotate(180deg);
+}
+
+.gradient-button::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: rgba(0, 0, 0, 0.7); 
+  border-radius: 47px;
+  z-index: -1;
+  filter: blur(5px);
+}
+
+/* أيقونات التواصل الاجتماعي */
+#socials-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+#socials-container i {
+    font-size: 2rem;
+    color: floralwhite;
+    cursor: pointer;
+    transition: color 300ms ease;
+}
+
+#socials-container i:hover {
+    color: #4ecdc4;
+}
+
+
+/* ========================================= */
+/* قسم من أنا (About Section)                */
+/* ========================================= */
+.about-section {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    max-width: 950px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.about-image img {
+    max-width: 250px;
+    width: 100%;
+    height: auto; 
+    border-radius: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.about-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+}
+
+.info-card {
+    flex: 1;
+    background: conic-gradient(from 0deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #ff6b6b); /* خلفية بيضاء للبطاقات */
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    color: black; /* نص أسود للبطاقات */
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.info-card i {
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.info-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.info-card p {
+    font-size: 0.9rem;
+    color: #1778D9;
+}
+
+.bio-text {
+    font-size: 1.2rem; /* تكبير الخط بنسبة بسيطة جداً ليكون أوضح */
+    font-weight: bold; /* هذه الخاصية تجعل الخط سميكاً (Bold) */
+    color: #000000; /* جعلنا اللون أقرب للأسود ليكون واضحاً جداً على الخلفية البيضاء */
+    line-height: 1.8;
+    text-align: left;
+    
+}
+
+
+/* ========================================= */
+/* 4. التجاوب مع الهواتف والأجهزة اللوحية    */
+/* ========================================= */
+/* ========================================= */
+/* التجاوب مع الهواتف والشاشات حتى 800px     */
+/* ========================================= */
+@media screen and (max-width: 900px) {
+    /* تعديل شريط التنقل */
+    nav {
+        justify-content: space-between;
+        padding: 0 1.5rem;
+    }
+
+    .menu-icon {
+        display: block; 
+        z-index: 100;
+        color: #e06666; /* لون الأيقونة الأحمر المائل للوردي كما في الصورة */
+        font-size: 2rem; /* تكبير الأيقونة قليلاً لتكون واضحة */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        height: 100vh;
+        width: 180px;
+        background: rgba(51, 34, 34, 0.95); /* جعلت الخلفية أغمق قليلاً لتكون أوضح */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        transition: 0.4s ease-in-out;
+        z-index: 100;
+        box-shadow: -5px 0 15px rgba(240, 239, 239, 0.72);
+    }
+
+    .nav-links.active {
+        right: 0; 
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    /* تعديل قسم الملف الشخصي */
+    #profile {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 4rem 1rem;
+        text-align: center;
+    }
+
+    .section__pic-container {
+        width: 250px; /* تصغير الصورة قليلاً لتناسب الشاشة كما في صورتك */
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .section__text__p2 {
+        font-size: 1.2rem;
+    }
+
+    /* ترتيب الأزرار فوق بعضها لجميع الهواتف */
+    .btn-container {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    .gradient-button {
+        width: 75%; /* عرض الأزرار كما يظهر في الصورة */
+    }
+}
+
+
+    /* التجاوب الخاص بقسم About */
+   .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 250px;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-direction: row; /* لجعل البطاقات فوق بعضها كما في الصورة */
+        align-items: stretch; /* السر هنا: هذا السطر يجبر البطاقات على التمركز في المنتصف */
+        justify-content: center;
+        width: 100%;
+        gap: 15px; /*المسافة بين البطاقتين*/
+    }
+
+    .info-card {
+        width: 80%; /* تحديد عرض البطاقة لكي لا تمتد لآخر الشاشة */
+        max-width: 280px; /* أقصى عرض للبطاقة للحفاظ على شكلها الأنيق */
+        padding: 10px;
+    }
+
+    
+
+      .bio-text {
+        text-align: center;
+        font-size: 1rem; /* حجم مناسب ومقروء بوضوح على الهاتف */
+        font-weight: 600; /* الحفاظ على سمك الخط في الهاتف أيضاً */
+    }
+
+
+
+/* ========================================= */
+/* التجاوب مع الشاشات الصغيرة جداً           */
+/* ========================================= */
+@media screen and (max-width: 480px) {
+    .section__pic-container {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .gradient-button {
+        width: 85%; /* زيادة عرض الزر قليلاً في الشاشات الصغيرة جداً */
+    }
+}
