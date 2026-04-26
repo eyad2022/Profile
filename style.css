@@ -284,11 +284,152 @@ a:hover {
 
 
 
+
+
+
+/*#experience {
+  height: 100vh;
+  padding: 0 10rem;
+  padding-top: 25px;
+  margin-top: 250px;
+}
+
+.section-head{
+    text-align: center;
+    color: black;
+    font-size: 2.5rem;
+}
+
+#experience #stacks-cont {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#experience #stacks-cont .stack-card {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #C21A1A;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  background: #A3B0B7;
+  max-width: 50%;
+}
+
+#experience #stacks-cont .stack-card .stack-title {
+  color: #555;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+
+#experience #stacks-cont .stack-card .tools-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+
+#experience #stacks-cont .stack-card .tools-cont .tool-box {
+  display: flex;
+  gap: 1rem;
+  width: 250px;
+}
+
+/*.tools-cont .tool-box svg {
+  font-size: 25px;
+}
+
+.tools-cont .tool-box h4 {
+  font-size: 2rem;
+}
+
+.tools-cont .tool-box p {
+  color: #2F4DD6;
+}*/
+
+
+/* ========================================= */
+/* قسم الخبرات (Experience)                  */
+/* ========================================= */
+.experience-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8rem auto;
+    padding: 0 2rem;
+    margin-top: 250px;
+    scroll-margin-top: 100px;
+}
+.section__text__p1 {
+    color: #3565F2;
+    font-size: 30px;
+}
+
+/* البطاقة الرمادية */
+.experience-card {
+    background-color: rgba(160, 175, 185, 0.85); /* لون رمادي مائل للأزرق وشفاف قليلاً */
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 700px; /* أقصى عرض للبطاقة في الكمبيوتر */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.experience-title {
+    color: #222;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* شبكة المهارات في الكمبيوتر (4 بجانب بعض) */
+.skills-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* لضمان عدم خروج العناصر عن البطاقة */
+    
+   
+}
+
+.skill-item {
+    display: flex;
+    gap: 5px;
+    text-align: left;
+    
+}
+
+.skill-item i {
+    color: #1D06FF;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.skill-item h3 {
+    color: #000000;
+    font-weight: 1000;
+}
+
+.skill-item p {
+    color: #444; /* لون النص الصغير */
+    font-size: 0.85rem;
+}
+
+
 /* ======================================================== */
 /* أكواد التجاوب الشاملة للهواتف - (يجب أن تكون في أسفل الملف) */
 /* ======================================================== */
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 700px) {
     /* 1. إصلاح شريط التنقل (الناف بار) */
     nav {
         padding: 0 1.5rem;
@@ -425,7 +566,42 @@ a:hover {
         font-size: 0.95rem;
         margin-top: -30px;
     }
+    
+        /* تجاوب قسم الخبرات للهواتف */
+        
+    .experience-card {
+        padding: 20px 15px; /* تصغير المسافات الداخلية للبطاقة */
+        margin-top: 1rem;
+    }
+
+    .experience-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    /* تحويل عرض المهارات إلى شبكة 2x2 في الهاتف */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* هذا السطر يقسم المساحة إلى عمودين متساويين */
+        gap: 20px 10px; /* المسافة بين الصفوف والأعمدة */
+        justify-content: center;
+    }
+
+    .skill-item {
+        justify-content: flex-start; /* محاذاة النص لليسار داخل شبكة الهاتف */
+        margin-left: 10px;
+    }
+
+    .skill-item h3 {
+        font-size: 1rem; /* تصغير اسم المهارة قليلاً */
+    }
+
+    .skill-item p {
+        font-size: 0.75rem;
+    }
+
 }
+
 
 /* ======================================================== */
 /* دعم إضافي للشاشات الصغيرة جداً (مثل iPhone SE القديم)    */
