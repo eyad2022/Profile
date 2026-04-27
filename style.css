@@ -287,142 +287,248 @@ a:hover {
 
 
 
-/*#experience {
-  height: 100vh;
-  padding: 0 10rem;
-  padding-top: 25px;
-  margin-top: 250px;
-}
-
-.section-head{
-    text-align: center;
-    color: black;
-    font-size: 2.5rem;
-}
-
-#experience #stacks-cont {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-#experience #stacks-cont .stack-card {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  flex-direction: column;
-  border: 1px solid #C21A1A;
-  border-radius: 2rem;
-  padding: 1.5rem;
-  background: #A3B0B7;
-  max-width: 50%;
-}
-
-#experience #stacks-cont .stack-card .stack-title {
-  color: #555;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-
-#experience #stacks-cont .stack-card .tools-cont {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 2rem;
-}
-
-
-#experience #stacks-cont .stack-card .tools-cont .tool-box {
-  display: flex;
-  gap: 1rem;
-  width: 250px;
-}
-
-/*.tools-cont .tool-box svg {
-  font-size: 25px;
-}
-
-.tools-cont .tool-box h4 {
-  font-size: 2rem;
-}
-
-.tools-cont .tool-box p {
-  color: #2F4DD6;
-}*/
-
-
 /* ========================================= */
-/* قسم الخبرات (Experience)                  */
+/* قسم الخبرات العائم (Floating Experience)  */
 /* ========================================= */
+
 .experience-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 8rem auto;
     padding: 0 2rem;
-    margin-top: 250px;
-    scroll-margin-top: 100px;
+    position: relative; /* مهم لتحديد موقع العناصر العائمة */
 }
 .section__text__p1 {
     color: #3565F2;
     font-size: 30px;
+    
 }
 
-/* البطاقة الرمادية */
-.experience-card {
-    background-color: rgba(160, 175, 185, 0.85); /* لون رمادي مائل للأزرق وشفاف قليلاً */
-    border-radius: 20px;
-    padding: 40px;
-    margin-top: 2rem;
+/* الحاوية الجديدة لمدارات المهارات */
+.skills-orbit-container {
     width: 100%;
-    max-width: 700px; /* أقصى عرض للبطاقة في الكمبيوتر */
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.experience-title {
-    color: #222;
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    font-weight: 700;
-}
-
-/* شبكة المهارات في الكمبيوتر (4 بجانب بعض) */
-.skills-grid {
+    max-width: 1000px;
+    height: 600px; /* تحديد ارتفاع مناسب لعرض الطيران */
+    position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* لضمان عدم خروج العناصر عن البطاقة */
+    perspective: 1500px; /* تأثير المنظور ثلاثي الأبعاد */
     
-   
 }
 
-.skill-item {
+/* العنوان العائم */
+/*.experience-title-floating {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    font-weight: 900;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    position: absolute;
+    z-index: 10;
+}*/
+
+/* التنسيق الأساسي لكل مهارة عائمة */
+.floating-skill {
+    position: absolute;
     display: flex;
-    gap: 5px;
-    text-align: left;
-    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background: rgba(78, 155, 170, 1); /* خلفية شبه شفافة */
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    z-index: 5;
+    backface-visibility: hidden; /* تحسين الأداء في الـ 3D */
+    animation: skillFloat 6s ease-in-out infinite; /* حركة طفو عامة */
 }
 
-.skill-item i {
-    color: #1D06FF;
-    font-size: 1.2rem;
-    margin-top: 5px;
+/* تأثير التوهج عند الوقوف بالماوس */
+.floating-skill:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    transform: scale(1.1) translateZ(50px); /* يبرز للأمام عند الوقوف */
 }
 
-.skill-item h3 {
+/* تنسيق الأيقونة */
+.floating-skill i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* تنسيق النصوص */
+.skill-details {
+    text-align: center;
+}
+
+.skill-details h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.skill-details p {
     color: #000000;
-    font-weight: 1000;
+    font-size: 0.8rem;
 }
 
-.skill-item p {
-    color: #444; /* لون النص الصغير */
-    font-size: 0.85rem;
+/* تنسيق نقطة التحقق العائمة */
+.skill-check {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1rem;
+    color: white;
+    opacity: 0.7;
+    animation: checkGlow 2s ease-in-out infinite alternate;
 }
+
+/* ========================================= */
+/* حركات الطيران (Flying Animations)         */
+/* ========================================= */
+
+/* حركة طفو عشوائية للأعلى والأسفل */
+@keyframes skillFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* توهج نقطة التحقق */
+@keyframes checkGlow {
+    from { opacity: 0.7; }
+    to { opacity: 1; text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+}
+
+/* ========================================= */
+/* مسارات الطيران الفردية للأيقونات (Orbit Paths) */
+/* ========================================= */
+
+/* سنقوم بتحديد مسارات مختلفة لكل مهارة لتبدو عشوائية ومتداخلة */
+
+/* HTML5: تيار برتقالي */
+.html-skill {
+    top: 10%;
+    left: 10%;
+    animation: skillFloat 5s ease-in-out infinite alternate, 
+               htmlOrbit 15s linear infinite; /* مدار دائري */
+}
+.html-skill i { color: #f06529; }
+.html-skill { border-color: rgba(240, 101, 41, 0.3); }
+
+/* CSS3: تيار أزرق */
+.css-skill {
+    top: 10%;
+    right: 10%;
+    animation: skillFloat 7s ease-in-out infinite alternate, 
+               cssOrbit 20s linear infinite; /* مدار دائري أوسع */
+}
+.css-skill i { color: #2965f1; }
+.css-skill { border-color: rgba(41, 101, 241, 0.3); }
+
+/* JavaScript: تيار أصفر */
+.js-skill {
+    bottom: 10%;
+    left: 10%;
+    animation: skillFloat 6s ease-in-out infinite alternate, 
+               jsOrbit 18s linear infinite; /* مدار بيضاوي */
+}
+.js-skill i { color: #f0db4f; }
+.js-skill { border-color: rgba(240, 219, 79, 0.3); }
+
+/* Material UI: تيار أزرق فاتح */
+.mui-skill {
+    bottom: 10%;
+    right: 10%;
+    animation: skillFloat 8s ease-in-out infinite alternate, 
+               muiOrbit 22s linear infinite; /* مدار بيضاوي مائل */
+}
+.mui-skill i { color: #0081cb; }
+.mui-skill { border-color: rgba(0, 129, 203, 0.3); }
+
+/* تعديل حركة MUI لتظهر كـ intermediate */
+.mui-skill.floating-skill:hover {
+    box-shadow: 0 0 20px rgba(0, 129, 203, 0.4); /* توهج أخف */
+}
+
+/* ========================================= */
+/* حركات المدارات (Orbit Keyframes)          */
+/* ========================================= */
+
+/* مثال لحركة مدارية بسيطة لـ HTML */
+@keyframes htmlOrbit {
+    0% { transform: translate(0, 0) rotateY(0deg) translateZ(0); }
+    100% { transform: translate(0, 0) rotateY(360deg) translateZ(0); }
+}
+
+@keyframes rotatingFrame {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes textGlowPulse {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 
+                     0 0 20px rgba(66, 133, 244, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 
+                     0 0 30px rgba(244, 180, 0, 0.6), 
+                     0 0 40px rgba(240, 101, 41, 0.5);
+    }
+}
+
+.experience-title-floating {
+    color: rgba(0, 40, 255, 1);
+    font-size: 2.2rem;
+    font-weight: 800;
+    z-index: 10;
+    animation: textGlowPulse 2.5s ease-in-out infinite alternate;
+    position: relative;
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.experience-title-floating::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        #f06529,
+        #2965f1,
+        #f0db4f,
+        #0081cb,
+        #f06529
+    );
+    animation: rotatingFrame 4s linear infinite;
+    z-index: -2;
+    filter: blur(5px);
+}
+
+.experience-title-floating::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background: rgba(145, 145, 206, 0.44);
+    border-radius: 47px;
+    z-index: -1;
+}
+
+/* يمكنك تخصيص الحركات أكثر لتكون أكثر تعقيداً وجمالاً، 
+   لكن هذا الكود يمنحك الأساس لتبدأ به. */
 
 
 /* ======================================================== */
@@ -567,38 +673,110 @@ a:hover {
         margin-top: -30px;
     }
     
-        /* تجاوب قسم الخبرات للهواتف */
+    /* ========================================= */
+    /* تجاوب الأيقونات العائمة في الهواتف        */
+    /* ========================================= */
+      .skills-orbit-container {
+        height: 400px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        position: relative;
+        padding: 1rem 0;
+    }
+
+   .experience-title-floating {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        text-align: center;
+        width: 100%;
+        font-size: 1rem;
+        text-shadow: 0 0 15px rgba(0, 0, 0, 0.9), 0 2px 5px rgba(0, 0, 0, 1);
+    }
+
+    .floating-skill {
+        position: relative;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 115px;
+        height: 115px;
+        animation: skillFloat 4s ease-in-out infinite alternate !important; 
+    }
+
+    .floating-skill i {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+
+    .skill-details h3 {
+        font-size: 0.85rem;
+    }
+
+    .skill-details p {
+        font-size: 0.65rem;
+    }
+
+    .skill-check {
+        font-size: 0.8rem;
+        top: 8px;
+        right: 8px;
+    }
+       /* .experience-title-floating {
+        /* إبقاء تنسيق التوسيط الذي حددناه مسبقاً */
+      /*  position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
         
-    .experience-card {
-        padding: 20px 15px; /* تصغير المسافات الداخلية للبطاقة */
+        /* السر هنا: إلغاء العرض 100% وتصغير الحجم */
+      /*  display: inline-block; /* لكي يلتف الإطار حول النص فقط */
+      /*  width: auto; /* لا يأخذ عرض الشاشة بالكامل */
+   /*     font-size: 1.4rem; /* تصغير حجم الخط ليتناسب مع الهاتف */
+        
+        /* تعديل المسافات الداخلية للإطار في الهاتف */
+    /*    padding: 10px 25px;
+    }
+
+    /* تصغير سمك الإطار في الهاتف قليلاً لتبدو أنيقة */
+   .experience-title-floating::after {
+        inset: 2px;
+    }*/
+    /* تعديل نص Frontend Development فقط للهواتف */
+        /* تصغير حجم البرواز والخط لنص Frontend Development في الهاتف */
+        .skills-orbit-container {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 55px 20px;
+        padding: 2rem 0;
         margin-top: 1rem;
     }
 
-    .experience-title {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
+    .experience-title-floating {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: max-content;
+        margin: 0;
+        padding: 5px 18px;
+        font-size: 0.95rem;
+        white-space: nowrap;
+        z-index: 20;
+        display: block;
     }
 
-    /* تحويل عرض المهارات إلى شبكة 2x2 في الهاتف */
-    .skills-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* هذا السطر يقسم المساحة إلى عمودين متساويين */
-        gap: 20px 10px; /* المسافة بين الصفوف والأعمدة */
-        justify-content: center;
+    .experience-title-floating::after {
+        inset: 1.5px;
     }
 
-    .skill-item {
-        justify-content: flex-start; /* محاذاة النص لليسار داخل شبكة الهاتف */
-        margin-left: 10px;
-    }
-
-    .skill-item h3 {
-        font-size: 1rem; /* تصغير اسم المهارة قليلاً */
-    }
-
-    .skill-item p {
-        font-size: 0.75rem;
-    }
 
 }
 
