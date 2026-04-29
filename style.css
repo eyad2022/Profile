@@ -28,7 +28,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 15vh;
+    height: 10vh;
     padding: 0 5%; 
     /*margin-left: -800px;
     margin-right:-800px;*/
@@ -243,7 +243,7 @@ a:hover {
 
 .info-card {
     flex: 1;
-    background: conic-gradient(from 0deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #ff6b6b); /* خلفية بيضاء للبطاقات */
+    background: conic-gradient(from 0deg, #ff6b6b, #9090AE, #B1CBD2, #96ceb4, #feca57, #ff9ff3, #ff6b6b); /* خلفية بيضاء للبطاقات */
     border: 1px solid #ddd;
     border-radius: 20px;
     padding: 20px;
@@ -298,6 +298,8 @@ a:hover {
     margin: 8rem auto;
     padding: 0 2rem;
     position: relative; /* مهم لتحديد موقع العناصر العائمة */
+    margin-top: 250px;
+    scroll-margin-top: 80px;
 }
 .section__text__p1 {
     color: #3565F2;
@@ -527,6 +529,180 @@ a:hover {
     z-index: -1;
 }
 
+.projects-section {
+    text-align: center;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    margin-top: 230px;
+    scroll-margin-top: 80px;
+}
+
+.projects-section .section__text__p1 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 0.5rem auto;
+    font-size: 1..6rem;
+    color: #CA2626;
+    margin-left: 60px;
+}
+
+.projects-section .title {
+    font-size: 5.5rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    color: #000;
+    margin-left: 100px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+.project-card {
+    margin-left: 100px;
+    background: #ACACAC1A;
+    border: 1px solid #dcdcdc;
+    border-radius: 30px;
+    padding: 25px;
+    width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-img-container {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.project-img-container img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+.project-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.project-btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 0 2rem 0;
+    margin-top: 250px;
+}
+
+.contact-section .section__text__p1 {
+    color: #555;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-section .title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 2rem;
+}
+
+.contact-info-upper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #a3a3a3;
+    border-radius: 50px;
+    padding: 15px 30px;
+    background: #FFFFFF;
+    gap: 30px;
+}
+
+.contact-info-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+}
+
+.contact-info-container i {
+    font-size: 2.5rem;
+    color: #000;
+}
+
+.contact-info-container p {
+    margin: 0;
+}
+
+.contact-info-container a {
+    color: #000;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.contact-info-container a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0 2rem 0;
+  gap: 2.5rem;
+}
+
+/*.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+*/
+.copyright {
+    font-size: 2rem;
+    color: #FFFFFF;
+    margin-top: -200px;
+}
+
+
+    
 /* يمكنك تخصيص الحركات أكثر لتكون أكثر تعقيداً وجمالاً، 
    لكن هذا الكود يمنحك الأساس لتبدأ به. */
 
@@ -559,33 +735,43 @@ a:hover {
         cursor: pointer;
     }
     /* تنسيق القائمة المنسدلة */
-    .nav-links {
-        position: fixed;
-        display: flex;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 250px;
-        background: rgba(167, 152, 152, 0.95);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: 0.4s ease-in-out;
-        z-index: 100;
-    }
-    .nav-links.active {
-        right: 0; /* تظهر عند الضغط */
-    }
-        /* تصغير حجم خط الروابط في القائمة الجانبية للهاتف */
-    .nav-links li a {
-        font-size: 1.3rem; /* حجم ممتاز ومقروء للهاتف */
-        font-weight: 500;
-    }
+.nav-links {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    opacity: 0;
+    visibility: hidden;
+    height: auto;
+    width: max-content;
+    background: #2A252559;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+}
 
-    /* لضمان مسافة مناسبة بين كل رابط والذي تحته */
-    .nav-links li {
-        margin: 1.5rem 0; 
-    }
+.nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    top: 75px; 
+}
+
+.nav-links li {
+    margin: 10px 0;
+    list-style: none;
+}
+
+.nav-links li a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-decoration: none;
+}
 
 
     /* 2. إصلاح القسم الأول (الملف الشخصي) */
@@ -776,9 +962,79 @@ a:hover {
     .experience-title-floating::after {
         inset: 1.5px;
     }
+    
+    
+      .projects-section {
+        padding: 0 1rem;
+        overflow-x: hidden;
+    }
 
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+        width: 100%;
+    }
 
+    .project-card {
+        width: 90%;
+        max-width: 380px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .projects-section .section__text__p1 {
+        font-size: 1.2rem;
+        text-align: center ;
+        margin-left: -10px;
+    }
+
+.projects-section .title{
+  /*  text-align: center;*/
+    margin-left: -0px;
+    font-size: 4rem;
 }
+  /*  .project-img-container img {
+       /* height: 200px;
+    }*/
+    
+      .contact-info-upper-container {
+        padding: 12px 15px;
+        gap: 15px;
+        width: 90%;
+        max-width: 400px;
+        justify-content: space-around;
+    }
+
+    .contact-info-container a {
+        font-size: 0.8rem;
+    }
+
+    .contact-info-container i {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+    .contact-section .section__text__p1 {
+        text-align: center;
+        font-size: 1rem;
+    }
+    .contact-section .title{
+        text-align: center;
+        font-size: 2.5rem;
+    }
+.copyright{
+   font-size: .8rem;
+   text-align: center;
+}
+}
+
 
 
 /* ======================================================== */
