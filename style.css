@@ -5,14 +5,12 @@
     font-family: 'Poppins', sans-serif;
 } 
 html {
-    scroll-behavior: smooth; /* هذا السطر يجعل الحركة ناعمة عند الضغط على أي رابط */
+    scroll-behavior: smooth; 
 }
 
-
 body {
-    
     background-image: url('IMG-20260422-WA0005.jpg'); 
-    background-size: 100% 100%; /* تمديد الصورة لتملأ العرض والطول بالكامل */
+    background-size: 100% 100%; 
     background-position: center; 
     background-repeat: no-repeat; 
     background-attachment: fixed; 
@@ -20,18 +18,13 @@ body {
     color: white;
 }
 
-
-/* ========================================= */
-/* 2. شريط التنقل - الشاشات الكبيرة (Desktop)*/
-/* ========================================= */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 45px 5% 15px 5%;
+    position: relative;
     height: 10vh;
-    padding: 0 5%; 
-    /*margin-left: -800px;
-    margin-right:-800px;*/
 }
 
 .logo {
@@ -39,7 +32,62 @@ nav {
     font-weight: 500;
 }
 
-/* الأيقونة مخفية في الكمبيوتر */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* زيادة المسافة بين الساعة والزر (gap) */
+.top-center-container {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 150px; /* زيادة المسافة بقوة هنا لتباعد العنصرين */
+    z-index: 1000;
+    width: max-content;
+    background: #D2CECE;
+}
+
+.theme-picker-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme-picker {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+/* جعل الأيقونة بألوان الطيف لتدل على الألوان */
+.theme-icon {
+    cursor: pointer;
+    font-size: 5rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    animation: rainbowMove 4s linear infinite;
+}
+
+@keyframes rainbowMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.theme-icon:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
 .menu-icon {
     display: none; 
     font-size: 2rem;
@@ -66,17 +114,25 @@ a:hover {
     text-underline-offset: 1rem;
 }
 
-/* ========================================= */
-/* 3. قسم الملف الشخصي (Profile Section)     */
-/* ========================================= */
+.digital-clock {
+    background: transparent;
+    color: #3D6BDB;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 6rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    direction: ltr;
+    border: none;
+    box-shadow: none;
+}
+
 #profile {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20rem; /* زيادة المسافة بين الصورة والنص */
-   /* min-height: 85vh; /* ليأخذ أغلب ارتفاع الشاشة تحت الناف بار */
-    width: 100%; /* العرض الكامل */
-    max-width: 1600px; /* سقف للعرض لضمان التناسق في الشاشات العملاقة */
+    gap: 20rem; 
+    width: 100%; 
+    max-width: 1600px; 
     margin: 0 auto;
     padding: 4rem 2rem;
 }
@@ -93,8 +149,8 @@ a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 8px solid rgba(255, 255, 255, 0.1); /* إطار شفاف لإبراز الصورة */
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* ظل عميق للوضوح */
+    border: 8px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); 
 }
 
 .section__text {
@@ -115,7 +171,7 @@ a:hover {
     font-size: 5rem;
     font-weight: 900;
     margin-bottom: 2rem;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* لزيادة وضوح النص على الخلفية */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); 
 }
 
 .section__text__p2 {
@@ -125,7 +181,6 @@ a:hover {
     margin-bottom: 3rem;
 }
 
-/* الأزرار (Buttons) */
 .btn-container {
     display: flex;
     justify-content: center;
@@ -179,7 +234,6 @@ a:hover {
   filter: blur(5px);
 }
 
-/* أيقونات التواصل الاجتماعي */
 #socials-container {
     display: flex;
     justify-content: center;
@@ -197,10 +251,6 @@ a:hover {
     color: #4ecdc4;
 }
 
-
-/* ========================================= */
-/* قسم من أنا (About Section)                */
-/* ========================================= */
 .about-section {
     display: flex;
     gap: 180px;
@@ -209,6 +259,7 @@ a:hover {
     margin: 2rem auto;
     padding: 0 2rem;
 }
+
 #about-head {
   display: flex;
   flex-direction: column;
@@ -226,7 +277,7 @@ a:hover {
     width: 100%;
     height: 500px; 
     border-radius: 3rem;
-    box-shadow: 0 0 50px rgba(153, 60, 60, 1); /* ظل عميق للوضوح */
+    box-shadow: 0 0 50px rgba(153, 60, 60, 1); 
 }
 
 .about-content {
@@ -243,12 +294,12 @@ a:hover {
 
 .info-card {
     flex: 1;
-    background: conic-gradient(from 0deg, #ff6b6b, #9090AE, #B1CBD2, #96ceb4, #feca57, #ff9ff3, #ff6b6b); /* خلفية بيضاء للبطاقات */
+    background: conic-gradient(from 0deg, #ff6b6b, #9090AE, #B1CBD2, #96ceb4, #feca57, #ff9ff3, #ff6b6b); 
     border: 1px solid #ddd;
     border-radius: 20px;
     padding: 20px;
     text-align: center;
-    color: black; /* نص أسود للبطاقات */
+    color: black; 
     transition: transform 0.3s ease;
 }
 
@@ -275,21 +326,11 @@ a:hover {
 }
 
 .bio-text {
-    font-size: 1.6rem; /* تكبير الخط بنسبة بسيطة جداً ليكون أوضح */
-    font-weight: bold; /* هذه الخاصية تجعل الخط سميكاً (Bold) */
-    color: #000000; /* جعلنا اللون أقرب للأسود ليكون واضحاً جداً على الخلفية البيضاء */
+    font-size: 1.6rem; 
+    font-weight: bold; 
+    color: #000000; 
     text-align: left;
-    
 }
-
-
-
-
-
-
-/* ========================================= */
-/* قسم الخبرات العائم (Floating Experience)  */
-/* ========================================= */
 
 .experience-section {
     display: flex;
@@ -297,42 +338,27 @@ a:hover {
     align-items: center;
     margin: 8rem auto;
     padding: 0 2rem;
-    position: relative; /* مهم لتحديد موقع العناصر العائمة */
+    position: relative; 
     margin-top: 250px;
     scroll-margin-top: 80px;
 }
+
 .section__text__p1 {
     color: #3565F2;
     font-size: 30px;
-    
 }
 
-/* الحاوية الجديدة لمدارات المهارات */
 .skills-orbit-container {
     width: 100%;
     max-width: 1000px;
-    height: 600px; /* تحديد ارتفاع مناسب لعرض الطيران */
+    height: 600px; 
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    perspective: 1500px; /* تأثير المنظور ثلاثي الأبعاد */
-    
+    perspective: 1500px; 
 }
 
-/* العنوان العائم */
-/*.experience-title-floating {
-    color: white;
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    margin-top: 10px;
-    font-weight: 900;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-    position: absolute;
-    z-index: 10;
-}*/
-
-/* التنسيق الأساسي لكل مهارة عائمة */
 .floating-skill {
     position: absolute;
     display: flex;
@@ -341,31 +367,28 @@ a:hover {
     justify-content: center;
     width: 200px;
     height: 200px;
-    background: rgba(78, 155, 170, 1); /* خلفية شبه شفافة */
+    background: rgba(103, 173, 187, 1); 
     border-radius: 50%;
     border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
     cursor: pointer;
     z-index: 5;
-    backface-visibility: hidden; /* تحسين الأداء في الـ 3D */
-    animation: skillFloat 6s ease-in-out infinite; /* حركة طفو عامة */
+    backface-visibility: hidden; 
+    animation: skillFloat 6s ease-in-out infinite; 
 }
 
-/* تأثير التوهج عند الوقوف بالماوس */
 .floating-skill:hover {
     background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-    transform: scale(1.1) translateZ(50px); /* يبرز للأمام عند الوقوف */
+    transform: scale(1.1) translateZ(50px); 
 }
 
-/* تنسيق الأيقونة */
 .floating-skill i {
     font-size: 3rem;
     margin-bottom: 10px;
 }
 
-/* تنسيق النصوص */
 .skill-details {
     text-align: center;
 }
@@ -381,7 +404,6 @@ a:hover {
     font-size: 0.8rem;
 }
 
-/* تنسيق نقطة التحقق العائمة */
 .skill-check {
     position: absolute;
     top: 10px;
@@ -392,78 +414,55 @@ a:hover {
     animation: checkGlow 2s ease-in-out infinite alternate;
 }
 
-/* ========================================= */
-/* حركات الطيران (Flying Animations)         */
-/* ========================================= */
-
-/* حركة طفو عشوائية للأعلى والأسفل */
 @keyframes skillFloat {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
 }
 
-/* توهج نقطة التحقق */
 @keyframes checkGlow {
     from { opacity: 0.7; }
     to { opacity: 1; text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
 }
 
-/* ========================================= */
-/* مسارات الطيران الفردية للأيقونات (Orbit Paths) */
-/* ========================================= */
-
-/* سنقوم بتحديد مسارات مختلفة لكل مهارة لتبدو عشوائية ومتداخلة */
-
-/* HTML5: تيار برتقالي */
 .html-skill {
     top: 10%;
     left: 10%;
     animation: skillFloat 5s ease-in-out infinite alternate, 
-               htmlOrbit 15s linear infinite; /* مدار دائري */
+               htmlOrbit 15s linear infinite; 
+    border-color: rgba(240, 101, 41, 0.3);
 }
 .html-skill i { color: #f06529; }
-.html-skill { border-color: rgba(240, 101, 41, 0.3); }
 
-/* CSS3: تيار أزرق */
 .css-skill {
     top: 10%;
     right: 10%;
     animation: skillFloat 7s ease-in-out infinite alternate, 
-               cssOrbit 20s linear infinite; /* مدار دائري أوسع */
+               cssOrbit 20s linear infinite; 
+    border-color: rgba(41, 101, 241, 0.3);
 }
 .css-skill i { color: #2965f1; }
-.css-skill { border-color: rgba(41, 101, 241, 0.3); }
 
-/* JavaScript: تيار أصفر */
 .js-skill {
     bottom: 10%;
     left: 10%;
     animation: skillFloat 6s ease-in-out infinite alternate, 
-               jsOrbit 18s linear infinite; /* مدار بيضاوي */
+               jsOrbit 18s linear infinite; 
+    border-color: rgba(240, 219, 79, 0.3);
 }
 .js-skill i { color: #f0db4f; }
-.js-skill { border-color: rgba(240, 219, 79, 0.3); }
 
-/* Material UI: تيار أزرق فاتح */
 .mui-skill {
     bottom: 10%;
     right: 10%;
     animation: skillFloat 8s ease-in-out infinite alternate, 
-               muiOrbit 22s linear infinite; /* مدار بيضاوي مائل */
+               muiOrbit 22s linear infinite; 
+    border-color: rgba(0, 129, 203, 0.3);
 }
 .mui-skill i { color: #0081cb; }
-.mui-skill { border-color: rgba(0, 129, 203, 0.3); }
-
-/* تعديل حركة MUI لتظهر كـ intermediate */
 .mui-skill.floating-skill:hover {
-    box-shadow: 0 0 20px rgba(0, 129, 203, 0.4); /* توهج أخف */
+    box-shadow: 0 0 20px rgba(0, 129, 203, 0.4); 
 }
 
-/* ========================================= */
-/* حركات المدارات (Orbit Keyframes)          */
-/* ========================================= */
-
-/* مثال لحركة مدارية بسيطة لـ HTML */
 @keyframes htmlOrbit {
     0% { transform: translate(0, 0) rotateY(0deg) translateZ(0); }
     100% { transform: translate(0, 0) rotateY(360deg) translateZ(0); }
@@ -507,14 +506,7 @@ a:hover {
     transform: translate(-50%, -50%);
     width: 200%;
     height: 200%;
-    background: conic-gradient(
-        from 0deg,
-        #f06529,
-        #2965f1,
-        #f0db4f,
-        #0081cb,
-        #f06529
-    );
+    background: conic-gradient(from 0deg, #f06529, #2965f1, #f0db4f, #0081cb, #f06529);
     animation: rotatingFrame 4s linear infinite;
     z-index: -2;
     filter: blur(5px);
@@ -542,7 +534,7 @@ a:hover {
     width: 100%;
     text-align: center;
     margin: 0 auto 0.5rem auto;
-    font-size: 1..6rem;
+    font-size: 1.6rem;
     color: #CA2626;
     margin-left: 60px;
 }
@@ -601,14 +593,6 @@ a:hover {
     margin-bottom: 20px;
 }
 
-.project-btn-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-
-
 .contact-section {
     display: flex;
     flex-direction: column;
@@ -646,7 +630,6 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 8px;
-    
 }
 
 .contact-info-container i {
@@ -674,143 +657,130 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 4rem 0 2rem 0;
-  gap: 2.5rem;
+    gap: 2.5rem;
 }
 
-/*.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-links a {
-    color: #000;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.nav-links a:hover {
-    text-decoration: underline;
-}
-*/
 .copyright {
     font-size: 2rem;
     color: #FFFFFF;
     margin-top: -200px;
 }
 
-
-    
-/* يمكنك تخصيص الحركات أكثر لتكون أكثر تعقيداً وجمالاً، 
-   لكن هذا الكود يمنحك الأساس لتبدأ به. */
-
-
-/* ======================================================== */
-/* أكواد التجاوب الشاملة للهواتف - (يجب أن تكون في أسفل الملف) */
-/* ======================================================== */
-
 @media screen and (max-width: 700px) {
-    /* 1. إصلاح شريط التنقل (الناف بار) */
     nav {
-        padding: 0 1.5rem;
+        padding: 35px 5% 10px 5%;
+        background: transparent;
+        backdrop-filter: none;
+        margin-top: 40px ;
     }
     
-        /* إصلاح حجم اللوجو العملاق في الهواتف */
     .logo {
-        font-size: 1.5rem; /* تصغير حجم الخط ليتناسب مع الهاتف */
-        white-space: nowrap; /* إجبار الكلمة على البقاء في سطر واحد وعدم الانقسام */
-        max-width: 75%; /* منعه من التمدد ودفع أيقونة القائمة */
+        font-size: 1.5rem; 
+        white-space: nowrap; 
+        max-width: 75%; 
     }
 
-    .nav-links {
-        display: none; /* إخفاء الروابط العادية */
+    .top-center-container {
+        top: 8px;
+        gap: 25px;
     }
+    
+    .digital-clock {
+        font-size: 1.2rem;
+    }
+
+    .theme-icon {
+        font-size: 1.5rem;
+    }
+
     .menu-icon {
-        display: block; /* إظهار أيقونة القائمة */
+        display: block; 
         font-size: 2.2rem;
         color: #e06666;
         z-index: 101;
         cursor: pointer;
     }
-    /* تنسيق القائمة المنسدلة */
-.nav-links {
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    opacity: 0;
-    visibility: hidden;
-    height: auto;
-    width: max-content;
-    background: #2A252559;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 20px 35px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease-in-out;
-    z-index: 100;
-}
 
-.nav-links.active {
-    opacity: 1;
-    visibility: visible;
-    top: 75px; 
-}
+    /* --- التعديل 1: تخصيص القائمة العلوية فقط لتختفي --- */
+    #nav-links {
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        opacity: 0;
+        visibility: hidden;
+        height: auto;
+        width: max-content;
+        background: #2A252559;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px 35px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease-in-out;
+        z-index: 100;
+    }
 
-.nav-links li {
-    margin: 10px 0;
-    list-style: none;
-}
+    #nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        top: 75px; 
+    }
 
-.nav-links li a {
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-decoration: none;
-}
+    #nav-links li {
+        margin: 10px 0;
+        list-style: none;
+    }
 
+    #nav-links li a {
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+    }
 
-    /* 2. إصلاح القسم الأول (الملف الشخصي) */
     #profile {
-        flex-direction: column; /* الصورة فوق والنص تحت */
+        flex-direction: column; 
         text-align: center;
         gap: 2rem;
-        padding: 6rem 1rem 2rem; /* مسافة علوية لتجنب التداخل مع الناف بار */
+        padding: 6rem 1rem 2rem; 
         min-height: auto;
     }
+
     .section__pic-container {
-        width: 250px; /* تكبير الصورة لتناسب الهاتف */
+        width: 250px; 
         height: 250px;
         margin: 0 auto;
     }
+
     .title {
-        font-size: 2.8rem; /* تصغير الخط لكي لا يخرج عن الشاشة */
+        font-size: 2.8rem; 
     }
+
     .section__text__p2 {
         font-size: 1.5rem;
     }
+
     .btn-container {
-        flex-direction: column; /* الأزرار فوق بعضها */
+        flex-direction: column; 
         width: 100%;
         align-items: center;
         gap: 1rem;
     }
+
     .gradient-button {
         width: 80%;
     }
 
-    /* 3. إصلاح قسم من أنا (About) */
     .about-section {
-        flex-direction: column; /* الصورة فوق والبطاقات تحت */
+        flex-direction: column; 
         text-align: center;
         margin: 3rem 1rem;
         margin-top : 150px;
         padding: 2rem 1rem;
         gap: 15px;
     }
+
     .about-image {
         width: 100%;
         display: flex;
@@ -818,130 +788,43 @@ footer {
         margin-bottom: 35px;
         margin-top: -140px; 
     }
+
     .about-image img {
-        max-width: 260px; /* حجم الصورة في الهاتف */
+        max-width: 260px; 
         max-height: 240px;
-        
     }
     
-    /* جعل البطاقات بجانب بعضها كما طلبت مسبقاً */
     .cards-container {
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
         gap: 10px;
     }
+
     .info-card {
         width: 48%;
-        height: 120px; /* تثبيت الارتفاع لتبدو مرتبة */
-       padding: 10px 5px;
+        height: 120px; 
+        padding: 10px 5px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .info-card i {
-        font-size: 1.2rem;
-        margin-bottom: 5px;
-    }
-    .info-card h3 {
-        font-size: 0.85rem;
-        margin-bottom: 2px;
-    }
-    .info-card p {
-        font-size: 0.7rem;
-        line-height: 1.2;
-    }
-    .bio-text {
-        text-align: center;
-        font-size: 0.95rem;
-        margin-top: -30px;
-    }
+
+    .info-card i { font-size: 1.2rem; margin-bottom: 5px; }
+    .info-card h3 { font-size: 0.85rem; margin-bottom: 2px; }
+    .info-card p { font-size: 0.7rem; line-height: 1.2; }
+    .bio-text { text-align: center; font-size: 0.95rem; margin-top: -30px; }
     
-    /* ========================================= */
-    /* تجاوب الأيقونات العائمة في الهواتف        */
-    /* ========================================= */
-      .skills-orbit-container {
-        height: 400px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        justify-items: center;
-        align-items: center;
-        position: relative;
-        padding: 1rem 0;
-    }
-
-   .experience-title-floating {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 10;
-        text-align: center;
-        width: 100%;
-        font-size: 1rem;
-        text-shadow: 0 0 15px rgba(0, 0, 0, 0.9), 0 2px 5px rgba(0, 0, 0, 1);
-    }
-
-    .floating-skill {
-        position: relative;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        width: 115px;
-        height: 115px;
-        animation: skillFloat 4s ease-in-out infinite alternate !important; 
-    }
-
-    .floating-skill i {
-        font-size: 1.8rem;
-        margin-bottom: 5px;
-    }
-
-    .skill-details h3 {
-        font-size: 0.85rem;
-    }
-
-    .skill-details p {
-        font-size: 0.65rem;
-    }
-
-    .skill-check {
-        font-size: 0.8rem;
-        top: 8px;
-        right: 8px;
-    }
-       /* .experience-title-floating {
-        /* إبقاء تنسيق التوسيط الذي حددناه مسبقاً */
-      /*  position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 10;
-        
-        /* السر هنا: إلغاء العرض 100% وتصغير الحجم */
-      /*  display: inline-block; /* لكي يلتف الإطار حول النص فقط */
-      /*  width: auto; /* لا يأخذ عرض الشاشة بالكامل */
-   /*     font-size: 1.4rem; /* تصغير حجم الخط ليتناسب مع الهاتف */
-        
-        /* تعديل المسافات الداخلية للإطار في الهاتف */
-    /*    padding: 10px 25px;
-    }
-
-    /* تصغير سمك الإطار في الهاتف قليلاً لتبدو أنيقة */
-   .experience-title-floating::after {
-        inset: 2px;
-    }*/
-    /* تعديل نص Frontend Development فقط للهواتف */
-        /* تصغير حجم البرواز والخط لنص Frontend Development في الهاتف */
-        .skills-orbit-container {
+    .skills-orbit-container {
         position: relative;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 55px 20px;
         padding: 2rem 0;
         margin-top: 1rem;
+        height: 400px; 
+        
     }
 
     .experience-title-floating {
@@ -961,9 +844,24 @@ footer {
     .experience-title-floating::after {
         inset: 1.5px;
     }
+
+    .floating-skill {
+        position: relative;
+        top: auto !important;
+        left: 30px !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 115px;
+        height: 115px;
+        animation: skillFloat 4s ease-in-out infinite alternate !important; 
+    }
+
+    .floating-skill i { font-size: 1.8rem; margin-bottom: 5px; }
+    .skill-details h3 { font-size: 0.85rem; }
+    .skill-details p { font-size: 0.65rem; }
+    .skill-check { font-size: 0.8rem; top: 8px; right: 8px; }
     
-    
-      .projects-section {
+    .projects-section {
         padding: 0 1rem;
         overflow-x: hidden;
     }
@@ -982,22 +880,19 @@ footer {
         padding: 20px;
         box-sizing: border-box;
     }
+
     .projects-section .section__text__p1 {
         font-size: 1.2rem;
         text-align: center ;
         margin-left: -10px;
     }
 
-.projects-section .title{
-  /*  text-align: center;*/
-    margin-left: -0px;
-    font-size: 4rem;
-}
-  /*  .project-img-container img {
-       /* height: 200px;
-    }*/
+    .projects-section .title{
+        margin-left: -0px;
+        font-size: 4rem;
+    }
     
-      .contact-info-upper-container {
+    .contact-info-upper-container {
         padding: 12px 15px;
         gap: 15px;
         width: 90%;
@@ -1005,56 +900,47 @@ footer {
         justify-content: space-around;
     }
 
-    .contact-info-container a {
-        font-size: 0.8rem;
-    }
+    .contact-info-container a { font-size: 0.8rem; }
+    .contact-info-container i { font-size: 1rem; }
+    
+    .contact-section .section__text__p1 { text-align: center; font-size: 1rem; }
+    .contact-section .title{ text-align: center; font-size: 2.5rem; }
 
-    .contact-info-container i {
-        font-size: 1rem;
-    }
-
-    .nav-links {
+    /* --- التعديل 2: إظهار الناف بار السفلية (الفوتر) بجانب بعضها --- */
+    footer {
+        padding: 2rem 0;
         gap: 1rem;
     }
-    
-    .nav-links a {
-        font-size: 0.9rem;
+
+    footer .nav-links {
+        position: static; 
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        flex-direction: row; /* جعل الروابط بجانب بعضها */
+        gap: 15px;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0;
+        width: auto;
     }
-    .contact-section .section__text__p1 {
-        text-align: center;
-        font-size: 1rem;
+
+    footer .nav-links li a {
+        font-size: 1rem !important; 
     }
-    .contact-section .title{
-        text-align: center;
-        font-size: 2.5rem;
+
+    .copyright{ 
+        font-size: .8rem; 
+        text-align: center; 
+        margin-top: 0 !important; /* إزالة الرفع الخاطئ للنص */
     }
-.copyright{
-   font-size: .8rem;
-   text-align: center;
 }
-}
 
-
-
-/* ======================================================== */
-/* دعم إضافي للشاشات الصغيرة جداً (مثل iPhone SE القديم)    */
-/* ======================================================== */
 @media screen and (max-width: 400px) {
-    .section__pic-container {
-        width: 200px;
-        height: 200px;
-    }
-    .title {
-        font-size: 2.2rem;
-    }
-    .info-card h3 {
-        font-size: 0.75rem; /* تصغير الكلمات لكي لا تنكسر */
-    }
-    .info-card p {
-        font-size: 0.65rem;
-    }
-    .gradient-button {
-        width: 95%;
-        font-size: 16px;
-    }
+    .section__pic-container { width: 200px; height: 200px; }
+    .title { font-size: 2.2rem; }
+    .info-card h3 { font-size: 0.75rem; }
+    .info-card p { font-size: 0.65rem; }
+    .gradient-button { width: 95%; font-size: 16px; }
 }

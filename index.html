@@ -9,12 +9,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+ 
+    <div class="top-center-container">
+        <div id="digital-clock" class="digital-clock"></div>
+        <div class="theme-picker-container">
+            <input type="color" id="theme-picker" value="#1a1a1a" title="تغيير ألوان الموقع">
+            <label for="theme-picker" class="theme-icon">
+                <i class="fa-solid fa-palette"></i>
+            </label>
+        </div>
+    </div>
 
-    <nav id="desktop-nav">
+    <nav>
         <div class="logo">Eyad El-Alfey</div>
-        
-        <div class="menu-icon">
-            <i class="fa-solid fa-bars"></i>
+       
+        <div class="nav-controls">
+            <div class="menu-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
 
         <ul class="nav-links" id="nav-links">
@@ -45,23 +57,18 @@
             </div>
             
             <div id="socials-container">
-                <a href="https://www.linkedin.com/in/eyad-el-alfey-46a278407?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/eyad-el-alfey-46a278407" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com/eyad2022" target="_blank"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
     </section>
     
+    <div id="about-head">
+        <p>Get To Know More</p>
+        <h2>About Me</h2>
+    </div>
     
-    
-    
-    
-     <div id="about-head">
-          <p>Get To Know More</p>
-          <h2>About Me</h2>
-        </div>
-    
-        <section class="about-section">
-           
+    <section class="about-section">
         <div class="about-image">
             <img src="1766609194887.jpg" alt="About Image">
         </div>
@@ -87,160 +94,119 @@
         </div>
     </section>
     
-    
-        <section id="experience" class="experience-section">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Experience</h1>
-    
-    <div class="skills-orbit-container">
-        <h2 class="experience-title-floating">Frontend Development</h2>
+    <section id="experience" class="experience-section">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Experience</h1>
         
-        <article class="floating-skill html-skill" data-skill="HTML">
-            <i class="fa-brands fa-html5"></i>
-            <div class="skill-details">
-                <h3>HTML</h3>
-                <p>Experienced</p>
+        <div class="skills-orbit-container">
+            <h2 class="experience-title-floating">Frontend Development</h2>
+            
+            <article class="floating-skill html-skill" data-skill="HTML">
+                <i class="fa-brands fa-html5"></i>
+                <div class="skill-details">
+                    <h3>HTML</h3>
+                    <p>Experienced</p>
+                </div>
+                <i class="fa-solid fa-circle-check skill-check"></i>
+            </article>
+
+            <article class="floating-skill css-skill" data-skill="CSS">
+                <i class="fa-brands fa-css3-alt"></i>
+                <div class="skill-details">
+                    <h3>CSS</h3>
+                    <p>Experienced</p>
+                </div>
+                <i class="fa-solid fa-circle-check skill-check"></i>
+            </article>
+
+            <article class="floating-skill js-skill" data-skill="JavaScript">
+                <i class="fa-brands fa-js"></i>
+                <div class="skill-details">
+                    <h3>Javascript</h3>
+                    <p>Experienced</p>
+                </div>
+                <i class="fa-solid fa-circle-check skill-check"></i>
+            </article>
+
+            <article class="floating-skill mui-skill" data-skill="Material UI">
+                <i class="fa-solid fa-cubes"></i>
+                <div class="skill-details">
+                    <h3>Material UI</h3>
+                    <p>Intermediate</p>
+                </div>
+                <i class="fa-solid fa-circle-check skill-check"></i>
+            </article>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <p class="section__text__p1">Browse My Recent</p>
+        <h1 class="title">Projects</h1>
+
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-img-container">
+                    <img src="1.jpg" alt="Appie App">
+                </div>
+                <h2 class="project-title">project1</h2>
+                <div class="btn-container">
+                    <button class="gradient-button" onclick="location.href='#'">Github</button>
+                    <button class="gradient-button" onclick="location.href='#'">Live Demo</button>
+                </div>
             </div>
-            <i class="fa-solid fa-circle-check skill-check"></i>
-        </article>
 
-        <article class="floating-skill css-skill" data-skill="CSS">
-            <i class="fa-brands fa-css3-alt"></i>
-            <div class="skill-details">
-                <h3>CSS</h3>
-                <p>Experienced</p>
+            <div class="project-card">
+                <div class="project-img-container">
+                    <img src="2.jpg" alt="Omnifood">
+                </div>
+                <h2 class="project-title">project2</h2>
+                <div class="btn-container">
+                    <button class="gradient-button" onclick="location.href='#'">Github</button>
+                    <button class="gradient-button" onclick="location.href='#'">Live Demo</button>
+                </div>
             </div>
-            <i class="fa-solid fa-circle-check skill-check"></i>
-        </article>
 
-        <article class="floating-skill js-skill" data-skill="JavaScript">
-            <i class="fa-brands fa-js"></i>
-            <div class="skill-details">
-                <h3>Javascript</h3>
-                <p>Experienced</p>
+            <div class="project-card">
+                <div class="project-img-container">
+                    <img src="3.jpg" alt="Project Three">
+                </div>
+                <h2 class="project-title">project3</h2>
+                <div class="btn-container">
+                    <button class="gradient-button" onclick="location.href='#'">Github</button>
+                    <button class="gradient-button" onclick="location.href='#'">Live Demo</button>
+                </div>
             </div>
-            <i class="fa-solid fa-circle-check skill-check"></i>
-        </article>
+        </div>
+    </section>
 
-        <article class="floating-skill mui-skill" data-skill="Material UI">
-            <i class="fa-solid fa-cubes"></i>
-            <div class="skill-details">
-                <h3>Material UI</h3>
-                <p>Intermediate</p>
-            </div>
-            <i class="fa-solid fa-circle-check skill-check"></i>
-        </article>
-
-    </div>
-</section>
-
-<section id="projects" class="projects-section">
-    <p class="section__text__p1">Browse My Recent</p>
-    <h1 class="title">Projects</h1>
-
-    <div class="projects-container">
+    <section id="contact" class="contact-section">
+        <p class="section__text__p1">Get In Touch</p>
+        <h1 class="title">Contact Me</h1>
         
-        <div class="project-card">
-            <div class="project-img-container">
-                <img src="1.jpg" alt="Appie App">
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <i class="fa-solid fa-envelope"></i>
+                <p><a href="mailto:ayadmsd68@gmail.com">ayadmsd68@gmail.com</a></p>
             </div>
-            <h2 class="project-title">project1</h2>
-            <div class="btn-container">
-                <button class="gradient-button" onclick="location.href='#'">Github</button>
-                <button class="gradient-button" onclick="location.href='#'">Live Demo</button>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-img-container">
-                <img src="2.jpg" alt="Omnifood">
-            </div>
-            <h2 class="project-title">project2</h2>
-            <div class="btn-container">
-                <button class="gradient-button" onclick="location.href='#'">Github</button>
-                <button class="gradient-button" onclick="location.href='#'">Live Demo</button>
+            <div class="contact-info-container">
+                <i class="fa-brands fa-linkedin"></i>
+                <p><a href="https://www.linkedin.com/in/eyad-el-alfey-46a278407">LinkedIn</a></p>
             </div>
         </div>
+    </section>
 
-        <div class="project-card">
-            <div class="project-img-container">
-                <img src="3.jpg" alt="Project Three">
-            </div>
-            <h2 class="project-title">project3</h2>
-            <div class="btn-container">
-                <button class="gradient-button" onclick="location.href='#'">Github</button>
-                <button class="gradient-button" onclick="location.href='#'">Live Demo</button>
-            </div>
-        </div>
+    <footer>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about-head">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <p class="copyright">Copyright &#169; 2026 I became a front-end web developer.</p>
+    </footer>
 
-    </div>
-</section>
-
-
-
-
-<section id="contact" class="contact-section">
-    <p class="section__text__p1">Get In Touch</p>
-    <h1 class="title">Contact Me</h1>
-    
-    <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-            <i class="fa-solid fa-envelope"></i>
-            <p><a href="mailto:ayadmsd68@gmail.com">ayadmsd68@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-            <i class="fa-brands fa-linkedin"></i>
-            <p><a href="https://www.linkedin.com/in/eyad-el-alfey-46a278407?utm_source=share_via&utm_content=profile&utm_medium=member_android">LinkedIn</a></p>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <p class="copyright">Copyright &#169; 2026 I became a front-end web developer   .</p>
-</footer>
-
-
-
-
-
-    <script>
-        const menu = document.getElementById("nav-links");
-        const menuIcon = document.querySelector(".menu-icon");
-        const navItems = document.querySelectorAll(".nav-links li a");
-
-        // 1. فتح وإغلاق القائمة عند الضغط على الأيقونة
-        menuIcon.addEventListener("click", function(event) {
-            menu.classList.toggle("active");
-            event.stopPropagation(); // منع إغلاق القائمة فوراً
-        });
-
-        // 2. إغلاق القائمة عند الضغط في أي مكان خارجها
-        document.addEventListener("click", function(event) {
-            const isMenuOpen = menu.classList.contains("active");
-            const isClickOutsideMenu = !menu.contains(event.target);
-            const isClickOutsideIcon = !menuIcon.contains(event.target);
-
-            if (isMenuOpen && isClickOutsideMenu && isClickOutsideIcon) {
-                menu.classList.remove("active");
-            }
-        });
-
-        // 3. إغلاق القائمة عند الضغط على أي رابط بداخلها
-        navItems.forEach(item => {
-            item.addEventListener("click", function() {
-                menu.classList.remove("active");
-            });
-        });
-        
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
