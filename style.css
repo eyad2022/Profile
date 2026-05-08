@@ -734,7 +734,7 @@ footer {
    1. التابلت في الوضع الأفقي (Landscape) - للتابلت العريض مثل سامسونج A7
    (العرض البرمجي من 1025px إلى 1366px)
    ========================================================================= */
-@media screen and (min-width: 1024px) and (max-width: 1340px) and (orientation: landscape) and (hover: none) and (pointer: coarse) {
+@media screen and (min-width: 1024px) and (max-width: 1340px) and (orientation: landscape) {
     
      nav {
         padding: 35px 5% 10px 5%;
