@@ -666,6 +666,303 @@ footer {
     margin-top: -200px;
 }
 
+
+/* =========================================================================
+   إعدادات الشاشات المتوسطة و "وضع سطح المكتب" في الهواتف (من 701 إلى 1200 بكسل)
+   هذا الكود لن يؤثر على شاشات الكمبيوتر الكبيرة ولا على وضع الهاتف العادي
+   ========================================================================= */
+@media screen and (max-width: 1200px) {
+    /* تصغير الساعة وزر الألوان واللوجو لتناسب العرض */
+    .logo { font-size: 3.5rem; }
+    .digital-clock { font-size: 3rem; }
+    .top-center-container { gap: 50px; }
+    .theme-icon { font-size: 3rem; }
+
+    /* قسم البروفايل: تصغير المسافات والسماح للعناصر بالنزول إذا ضاقت الشاشة */
+    #profile {
+        gap: 3rem;
+        padding: 8rem 2rem 4rem 2rem;
+        flex-wrap: wrap; /* هذا السطر يمنع التداخل */
+        text-align: center;
+    }
+    
+    .section__pic-container {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    .title { font-size: 3.5rem; }
+    .section__text__p2 { font-size: 2rem; margin-bottom: 2rem; }
+
+    /* قسم من أنا: تصغير المسافات */
+    .about-section {
+        gap: 50px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .about-image img {
+        width: 350px;
+        height: 350px;
+    }
+
+    /* قسم المشاريع: إزالة المسافات الجانبية الخاطئة وضبط العرض */
+    .projects-container {
+        gap: 2rem;
+        justify-content: center;
+    }
+    
+    .project-card {
+        margin-left: 0; /* إزالة الـ margin الذي يزيح البطاقات خارج الشاشة */
+        width: 350px;
+    }
+
+    .projects-section .title, .projects-section .section__text__p1 {
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    /* ضبط كروت الخبرات */
+    .cards-container {
+        gap: 20px;
+    }
+}
+
+
+/* =========================================================================
+   1. التابلت في الوضع الأفقي (Landscape) - للتابلت العريض مثل سامسونج A7
+   (العرض البرمجي من 1025px إلى 1366px)
+   ========================================================================= */
+@media screen and (min-width: 1024px) and (max-width: 1340px) and (orientation: landscape) and (hover: none) and (pointer: coarse) {
+    
+     nav {
+        padding: 35px 5% 10px 5%;
+        background: transparent;
+        backdrop-filter: none;
+        margin-top: 50px ;
+    }
+    
+    
+    a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+.top-center-container {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-70%);
+    display: flex;
+    align-items: center;
+    gap: 150px; /* زيادة المسافة بقوة هنا لتباعد العنصرين */
+    z-index: 1000;
+    width: max-content;
+    background: #D2CECE;
+}
+    
+    
+    .logo { font-size: 2.5rem; }
+    .top-center-container { gap: 40px; top: 15px; }
+    .digital-clock {
+        font-size: 1.5rem;
+        /* margin-left: -100px; */
+        
+    }
+    .theme-icon { 
+        font-size: 2rem; 
+        /* margin-left: -100px; */
+    }
+
+    #profile {
+        flex-direction: row;
+        gap: 4rem;
+        padding: 8rem 2rem 2rem 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .section__pic-container { width: 350px; height: 350px; }
+    .title { font-size: 4rem; margin-bottom: 1rem; }
+    .section__text__p2 { font-size: 2.5rem; }
+
+    .about-section {
+        flex-wrap: nowrap; /* إبقاء الصورة بجانب الكروت لأن العرض يسمح */
+        gap: 40px;
+        justify-content: center;
+        margin-top: 100px;
+    }
+    .about-image img { width: 380px; height: 380px; }
+    .cards-container { gap: 20px; }
+
+    .projects-container { justify-content: center; gap: 2rem; }
+    .project-card { margin-left: 0; width: 380px; }
+    .projects-section .title, .projects-section .section__text__p1 { margin-left: 0; text-align: center; }
+    
+    .skills-orbit-container { transform: scale(0.9); margin-top: -20px; }
+}
+
+/* =========================================================================
+   2. التابلت في الوضع الرأسي (Portrait) - يشمل سامسونج A7 والآيباد
+   (العرض البرمجي من 701px إلى 1024px)
+   ========================================================================= */
+/* =========================================================================
+   التابلت والشاشات المتوسطة (من 701px إلى 1024px)
+   يستهدف الوضع الرأسي للتابلت (مثل سامسونج A7 والآيباد) بشكل دقيق ومضمون
+   ========================================================================= */
+@media screen and (min-width: 701px) and (max-width: 1024px) {
+    /* 1. ضبط الناف بار ليتسع بشكل مريح بدون تداخل */
+    nav {
+        padding: 35px 5% 10px 5%;
+        background: transparent;
+        backdrop-filter: none;
+        margin-top: 40px ;
+    }
+    
+    .logo {
+        font-size: 2.5rem; 
+        white-space: nowrap; 
+        max-width: 75%; 
+    }
+
+    .top-center-container {
+        top: 8px;
+        gap: 25px;
+    }
+    
+    .digital-clock {
+        font-size: 1.2rem;
+    }
+
+    .theme-icon {
+        font-size: 1.5rem;
+    }
+
+    .menu-icon {
+        display: block; 
+        font-size: 3rem;
+        color: #e06666;
+        z-index: 101;
+        cursor: pointer;
+    }
+
+    /* --- التعديل 1: تخصيص القائمة العلوية فقط لتختفي --- */
+    #nav-links {
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        opacity: 0;
+        visibility: hidden;
+        height: auto;
+        width: max-content;
+        background: #2A252559;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px 35px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease-in-out;
+        z-index: 100;
+    }
+
+    #nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        top: 75px; 
+    }
+
+    #nav-links li {
+        margin: 10px 0;
+        list-style: none;
+    }
+
+    #nav-links li a {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    /* 2. قسم البروفايل: ترتيب طولي (صورة ثم نص) لمنع أي انضغاط في الشاشة الرأسية */
+    #profile {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+        padding: 8rem 2rem 2rem 2rem;
+    }
+    .section__pic-container { width: 320px; height: 320px; margin: 0 auto; }
+    .title { font-size: 3.8rem; margin-bottom: 1rem; }
+    .section__text__p2 { font-size: 2.2rem; margin-bottom: 2rem; }
+
+    /* 3. قسم "من أنا": ترتيب طولي احترافي */
+    .about-section {
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 80px;
+    }
+    .about-image img { width: 380px; height: 380px; margin: 0 auto; }
+    .about-content { width: 100%; align-items: center; text-align: center; }
+    .bio-text { text-align: center; }
+    .cards-container { justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+    /* 4. قسم المشاريع: عرض الكروت تحت بعضها بحجم مناسب للتابلت */
+    .projects-container { flex-direction: column; align-items: center; gap: 2.5rem; }
+    .project-card { margin-left: 0; width: 90%; max-width: 420px; }
+    .projects-section .title, .projects-section .section__text__p1 { margin-left: 0; text-align: center; }
+
+    /* 5. تصغير قوي وآمن لمدار المهارات لكي لا يخرج عن الشاشة */
+    .skills-orbit-container { transform: scale(0.70); margin-top: -40px; }
+    .floating-skill { width: 160px; height: 160px; }
+    .floating-skill i { font-size: 2.5rem; }
+    
+      .contact-section .section__text__p1 { text-align: center; font-size: 1.8rem; }
+    .contact-section .title{ text-align: center; font-size: 3rem; }
+
+     
+    .contact-info-upper-container {
+        padding: 12px 15px;
+        gap: 15px;
+        width: 80%;
+        max-width: 700px;
+        justify-content: space-around;
+    }
+
+    .contact-info-container a { font-size: 1.5rem; }
+    .contact-info-container i { font-size: 1.5rem; }
+    
+    footer {
+        padding: 2rem 0;
+        gap: 1rem;
+    }
+
+    footer .nav-links {
+        position: static; 
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        flex-direction: row; /* جعل الروابط بجانب بعضها */
+        gap: 15px;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0;
+        width: auto;
+    }
+
+    footer .nav-links li a {
+        font-size: 2rem !important; 
+    }
+
+    .copyright{ 
+        font-size: .8rem; 
+        text-align: center; 
+        margin-top: 0 !important; /* إزالة الرفع الخاطئ للنص */
+    }
+}
+
 @media screen and (max-width: 700px) {
     nav {
         padding: 35px 5% 10px 5%;
